@@ -679,5 +679,7 @@ def debug_state():
 # ==========================================
 
 if __name__ == '__main__':
-    print("MedTrack Cloud Healthcare System Starting on http://0.0.0.0:5000 (Local Phase)...")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5050))
+    print(f"MedTrack Cloud Healthcare System Starting on http://127.0.0.1:{port} (Local Phase)...")
+    app.run(host='127.0.0.1', port=port, debug=True)
+
